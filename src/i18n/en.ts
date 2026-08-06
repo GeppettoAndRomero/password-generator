@@ -6,7 +6,7 @@ export const en: ToolContent = {
   meta: {
     title: 'Password Generator — Strong Random Passwords, No Upload | runlocally',
     description:
-      'Generate strong random passwords entirely in your browser, using the Web Crypto CSPRNG (crypto.getRandomValues), not Math.random. Choose length, character sets, and generate up to 20 at once. Nothing is ever sent anywhere.',
+      'Generate strong random passwords entirely in your browser, using the Web Crypto CSPRNG (crypto.getRandomValues), not Math.random. Choose a length from 8 to 64 characters (16 by default), optionally exclude ambiguous characters, and generate up to 20 at once. Nothing is ever sent anywhere.',
     ogTitle: 'Password Generator — Strong Random Passwords, No Upload',
     ogDescription:
       'A password generator that uses a real cryptographic random source and never leaves your browser. Choose length and character sets, generate several at once, copy with one click.',
@@ -91,7 +91,15 @@ export const en: ToolContent = {
     },
     {
       q: 'What are "ambiguous characters" and why exclude them?',
-      a: 'Some characters are easy to misread or mistype, especially in certain fonts or when read aloud: the digit 0 versus the letter O, and the digit 1 versus lowercase l versus uppercase I. Turning on "exclude ambiguous characters" removes exactly these five characters from the pool, at a small cost to the charset size (and therefore the entropy for a given length).',
+      a: 'Some characters are easy to misread or mistype, especially in certain fonts or when read aloud: the digit 0 versus the letter O, and the digit 1 versus lowercase l versus uppercase I. Turning on "exclude ambiguous characters" gives you a password with no ambiguous characters at all — it removes exactly these five from the pool, at a small cost to the charset size (and therefore the entropy for a given length).',
+    },
+    {
+      q: 'How long should a password be? Is 16 characters enough?',
+      a: 'The length slider defaults to 16 characters, a common baseline recommendation for most accounts today. Longer is stronger — the "bits of entropy" figure shown with each password tells you exactly how much search space that length and character set actually cover, so you can judge whether 16, 20, or 32 characters fits what the password protects.',
+    },
+    {
+      q: 'Can it generate a passphrase made of random words instead of characters?',
+      a: 'No, not currently. This tool generates character-based passwords (letters, digits, symbols) drawn from a cryptographic random source — it does not include a word list, so it cannot produce a multi-word passphrase like "correct horse battery staple". If a word-based passphrase is specifically what you need, this is the wrong tool for that job.',
     },
     {
       q: 'Does it work offline?',
